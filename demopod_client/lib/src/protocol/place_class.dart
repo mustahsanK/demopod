@@ -10,6 +10,7 @@ import 'package:serverpod_client/serverpod_client.dart' as _i1;
 
 class Place extends _i1.SerializableEntity {
   Place({
+    this.id,
     required this.name,
     required this.location,
     required this.type,
@@ -20,12 +21,15 @@ class Place extends _i1.SerializableEntity {
     _i1.SerializationManager serializationManager,
   ) {
     return Place(
+      id: serializationManager.deserialize<int?>(jsonSerialization['id']),
       name: serializationManager.deserialize<String>(jsonSerialization['name']),
       location: serializationManager
           .deserialize<String>(jsonSerialization['location']),
       type: serializationManager.deserialize<String>(jsonSerialization['type']),
     );
   }
+
+  int? id;
 
   String name;
 
@@ -36,6 +40,7 @@ class Place extends _i1.SerializableEntity {
   @override
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'name': name,
       'location': location,
       'type': type,

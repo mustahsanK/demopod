@@ -1,4 +1,5 @@
 class: Place
+table: place
 fields:
   name: String
   location: String

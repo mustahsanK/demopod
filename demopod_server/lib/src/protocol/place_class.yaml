@@ -1,0 +1,5 @@
+class: Place
+fields:
+  name: String
+  location: String
+  type: String
